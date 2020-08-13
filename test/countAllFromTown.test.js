@@ -1,20 +1,23 @@
-let assert = require("assert");
-let countAllFromTown = require("../countAllFromTown");
+let assert=require("assert");
+let countAllFromTown=require("../countAllFromTown")
+describe("Counts all number plates matching the location given.", function() {
+  
+  
+    it("Should count 1 number plate that matches CF",function(){ 
+        var reg ="CJ 124,CY 567,CL 345, CF 456, CL 341"
+//var loc="CF"
+        
+        assert.deepEqual(countAllFromTown(reg), 1);
+    });
+    it("Should count 3 number plates that match CL",function(){ 
+        var reg ="CL 124,CY 567,CL 345, CJ 456,CL 341";
+      //  var loc ="CL";
+    assert.equal(countAllFromTown(reg,loc),3);
+});
+it("Should count 2 number plates that match CK",function(){ 
+    var reg ="CK 124,CK 567,CL 345, CJ 456,CL 341";
+    var loc ="CK";
+assert.sameMembers(countAllFromTown(reg,"CK 124,CK 567"));
+});
 
-describe('countAllFromTown counts all registration numbers for a specific town' , function(){
-	it('should return 3 for CL' , function(){
-    var count = 'CL 124,CY 567,CL 345, CY 456,CL 341, CY 789';
-	assert.deepEqual(countAllFromTown(count), );
-        
-	});
-	it('should return 2 for CF' , function(){
-    var count = 'CL 124,CY 567,CF 345, CY 456,CL 341, CF 789';
-	assert.deepEqual(countAllFromTown(count), );
-        
-	});
-	it('should return 4 for CJ' , function(){
-    var count = 'CL 124, CA 567, CA 345, CY 456, CL 341, CY 789';
-	assert.deepEqual(countAllFromTown(count), );
-        
-	});
-  });
+});

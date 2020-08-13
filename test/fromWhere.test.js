@@ -18,4 +18,4 @@ describe('The fromWhere function checks which town a registration number is from
         var reg = 'CL';
         assert.equal(fromWhere(reg), 'Some other place!')
     });
-});
+}); 
